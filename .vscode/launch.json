@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "com.sampleml.Main",
+            "projectName": "sampleml"
+        },
+        {
+            "type": "java",
+            "name": "MainDriver",
+            "request": "launch",
+            "mainClass": "com.sampleml.MainDriver",
+            "projectName": "sampleml"
+        },
+        {
+            "type": "java",
             "name": "Current File",
             "request": "launch",
             "mainClass": "${file}"
