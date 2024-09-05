@@ -8,6 +8,13 @@
             "type": "java",
             "name": "Main",
             "request": "launch",
+            "mainClass": "com.example.Main",
+            "projectName": "dl4j"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
             "mainClass": "com.sampleml.Main",
             "projectName": "sampleml"
         },
