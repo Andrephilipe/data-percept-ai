@@ -33,6 +33,9 @@ public class BasicUIExample {
                         .nIn(1).nOut(1).build())
                 .build();
 
+
+        MultiLayerNetwork model2 = NeuralNetwork.createNetwork(dataSet.getFeatures().columns(), dataSet.getLabels().columns());
+        model2.init();
         MultiLayerNetwork model = new MultiLayerNetwork(conf);
         model.init();
 
@@ -42,7 +45,7 @@ public class BasicUIExample {
         uiServer.attach(statsStorage);
         model.setListeners(new StatsListener(statsStorage));
 
-        MultiLayerNetwork model2 = NeuralNetwork.createNetwork(dataSet.getFeatures().columns(), dataSet.getLabels().columns());
+        
 
         // Carregar dados MNIST
 
