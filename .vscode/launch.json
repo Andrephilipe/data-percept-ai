@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "MySQLDataExtractor",
+            "request": "launch",
+            "mainClass": "com.example.MySQLDataExtractor",
+            "projectName": "dl4j"
+        },
+        {
+            "type": "java",
             "name": "App",
             "request": "launch",
             "mainClass": "com.example.App",

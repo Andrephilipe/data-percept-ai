@@ -26,6 +26,17 @@
         <artifactId>deeplearning4j-core</artifactId>
         <version>1.0.0-M1.1</version>
     </dependency>
+    <dependency>
+    <groupId>mysql</groupId>
+    <artifactId>mysql-connector-java</artifactId>
+    <version>8.0.33</version>
+</dependency>
+<dependency>
+    <groupId>org.slf4j</groupId>
+    <artifactId>slf4j-simple</artifactId>
+    <version>1.7.36</version>
+</dependency>
+
 
     </dependencies>
 
