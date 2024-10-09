@@ -1,3 +1,10 @@
-com\example\Main.class
-com\example\MySQLDataExtractor.class
-com\example\App.class
+com\percept\configuration\NeuralNetwork.class
+com\percept\App.class
+com\percept\Teste.class
+com\percept\data\DataPreparation.class
+com\percept\interfaces\uiniterfacedl4j\BasicUIExample.class
+com\percept\MySQLDataExtractor.class
+com\percept\train\TrainModel.class
+com\percept\train\EvaluateModel.class
+com\percept\interfaces\uiniterfacedl4j\util\UIExampleUtils.class
+com\percept\Main.class

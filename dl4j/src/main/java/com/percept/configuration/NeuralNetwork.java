@@ -1,4 +1,4 @@
-package com.example.configuration;
+package com.percept.configuration;
 
 import org.deeplearning4j.nn.conf.MultiLayerConfiguration;
 import org.deeplearning4j.nn.conf.NeuralNetConfiguration;

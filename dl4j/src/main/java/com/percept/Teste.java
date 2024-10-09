@@ -1,27 +1,19 @@
-package com.example;
+package com.percept;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.deeplearning4j.nn.multilayer.MultiLayerNetwork;
-import org.nd4j.linalg.dataset.DataSet;
-import java.sql.ResultSetMetaData;
-
-import com.example.configuration.NeuralNetwork;
-import com.example.data.DataPreparation;
-import com.example.train.EvaluateModel;
-import com.example.train.TrainModel;
-
-public class MySQLDataExtractor {
+public class Teste {
 
     public static void main(String[] args) {
-        String url = "jdbc:mysql://127.0.0.1:3306/percept?useSSL=false";
-        String user = "root";
-        String password = "12345";
+        String url = "jdbc:mysql://localhost:3306/seu_banco_de_dados?useSSL=false";
+        String user = "seu_usuario";
+        String password = "sua_senha";
 
         List<Object[]> dataList = new ArrayList<>();
 
@@ -31,16 +23,9 @@ public class MySQLDataExtractor {
 
             Connection conn = DriverManager.getConnection(url, user, password);
             Statement stmt = conn.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT * FROM custumer");
+            ResultSet rs = stmt.executeQuery("SELECT * FROM sua_tabela");
             ResultSetMetaData metaData = rs.getMetaData();
 
-            /*while (rs.next()) {
-                Object[] row = new Object[rs.getMetaData().getColumnCount()];
-                for (int i = 0; i < row.length; i++) {
-                    row[i] = rs.getObject(i + 1);
-                }
-                dataList.add(row);
-            }*/
             while (rs.next()) {
                 Object[] row = new Object[metaData.getColumnCount()];
                 for (int i = 0; i < row.length; i++) {
@@ -70,11 +55,12 @@ public class MySQLDataExtractor {
             e.printStackTrace();
         }
 
-        DataSet dataSet = DataPreparation.prepareData(dataList);
-        MultiLayerNetwork model = NeuralNetwork.createNetwork(dataSet.getFeatures().columns(), dataSet.getLabels().columns());
-        TrainModel.train(dataSet, model);
-        EvaluateModel.evaluate(dataSet, model);
+        // Exibindo os dados recuperados
+        for (Object[] row : dataList) {
+            for (Object value : row) {
+                System.out.print(value + "\t");
+            }
+            System.out.println();
+        }
     }
 }
-
-

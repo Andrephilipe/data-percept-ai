@@ -1,4 +1,4 @@
-package com.example.data;
+package com.percept.data;
 
 import org.nd4j.linalg.api.ndarray.INDArray;
 import org.nd4j.linalg.dataset.DataSet;

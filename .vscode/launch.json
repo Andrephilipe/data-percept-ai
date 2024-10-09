@@ -6,6 +6,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "BasicUIExample",
+            "request": "launch",
+            "mainClass": "com.percept.interfaces.uiniterfacedl4j.BasicUIExample",
+            "projectName": "dl4j"
+        },
+        {
+            "type": "java",
+            "name": "MySQLDataExtractor",
+            "request": "launch",
+            "mainClass": "com.percept.MySQLDataExtractor",
+            "projectName": "dl4j"
+        },
+        {
+            "type": "java",
             "name": "MySQLDataExtractor",
             "request": "launch",
             "mainClass": "com.example.MySQLDataExtractor",
