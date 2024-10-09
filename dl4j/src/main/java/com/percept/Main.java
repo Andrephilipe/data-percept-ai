@@ -1,4 +1,4 @@
-package com.example;
+package com.percept;
 
 public class Main {
     public static void main(String[] args) {
