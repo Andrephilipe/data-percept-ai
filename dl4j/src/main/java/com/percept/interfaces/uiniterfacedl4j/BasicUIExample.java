@@ -3,12 +3,12 @@ package com.percept.interfaces.uiniterfacedl4j;
 
 import java.io.IOException;
 
-import org.deeplearning4j.ui.api.UIServer;
-import org.deeplearning4j.nn.multilayer.MultiLayerNetwork;
 import org.deeplearning4j.nn.conf.MultiLayerConfiguration;
 import org.deeplearning4j.nn.conf.NeuralNetConfiguration;
 import org.deeplearning4j.nn.conf.layers.DenseLayer;
 import org.deeplearning4j.nn.conf.layers.OutputLayer;
+import org.deeplearning4j.nn.multilayer.MultiLayerNetwork;
+import org.deeplearning4j.ui.api.UIServer;
 import org.deeplearning4j.ui.model.stats.StatsListener;
 import org.deeplearning4j.ui.model.storage.InMemoryStatsStorage;
 import org.nd4j.linalg.activations.Activation;
@@ -16,7 +16,6 @@ import org.nd4j.linalg.dataset.DataSet;
 import org.nd4j.linalg.lossfunctions.LossFunctions;
 
 import com.percept.configuration.NeuralNetwork;
-import com.percept.data.DataPreparation;
 
 public class BasicUIExample {
 
@@ -32,8 +31,7 @@ public class BasicUIExample {
                         .activation(Activation.SIGMOID)
                         .nIn(1).nOut(1).build())
                 .build();
-
-
+        
         MultiLayerNetwork model2 = NeuralNetwork.createNetwork(dataSet.getFeatures().columns(), dataSet.getLabels().columns());
         model2.init();
         MultiLayerNetwork model = new MultiLayerNetwork(conf);
@@ -43,7 +41,7 @@ public class BasicUIExample {
         UIServer uiServer = UIServer.getInstance();
         InMemoryStatsStorage statsStorage = new InMemoryStatsStorage();
         uiServer.attach(statsStorage);
-        model.setListeners(new StatsListener(statsStorage));
+        model2.setListeners(new StatsListener(statsStorage));
 
         
 
