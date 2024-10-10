@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "App",
+            "request": "launch",
+            "mainClass": "com.percept.App",
+            "projectName": "dl4j"
+        },
+        {
+            "type": "java",
             "name": "BasicUIExample",
             "request": "launch",
             "mainClass": "com.percept.interfaces.uiniterfacedl4j.BasicUIExample",
